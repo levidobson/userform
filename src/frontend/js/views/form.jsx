@@ -7,7 +7,6 @@ import formValidation from '../../../backend/common/formvalidation.js'
 let validateForm = (formData, callback) => {
   let schema = Joi.object().keys(formValidation.schema)
   Joi.validate(formData, schema, {abortEarly: false}, function (err, value) {
-    return callback()
     let errors = {}
     if (err) {
       errors = err.details.reduce((obj, curr) => {
