@@ -1,0 +1,43 @@
+@import 'normalize';
+@import 'foundation/settings';
+@import 'foundation';
+
+body {
+  margin-top: 30px;
+}
+
+form {
+  .row {
+    margin-bottom: 1rem;
+    
+    input {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#loading {
+  display: none;
+}
+
+.suggestions {
+  border: 1px solid #ddd;
+  width: 100%;
+  list-style-type: none;
+  margin: 0 0 1rem 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+    
+  li {
+    padding: 0.5rem;
+    color: $body-font-color;
+    font-size: $f-dropdown-font-size;
+  }
+  
+  li.selected {
+    background: #ddd;
+  }
+}
+

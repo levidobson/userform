@@ -1,0 +1,99 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: UserForm app
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /:
+    x-handler: "build/backend/handlers/root.js"
+    get:
+      description: Returns default html
+      responses:
+        "200":
+          description: Success
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+  /validate:
+    post:
+      description: Awaits user data in json and returns 200 if data is valid
+      parameters:
+        - name: userData
+          in: body
+          description: The json payload
+          required: true
+          schema:
+            $ref: "#/definitions/ValidateInput"
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/ValidateResponse"
+        "400":
+          description: Validation failure
+          schema:
+            $ref: "#/definitions/ValidateResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /occupations:
+    get:
+      description: Returns the list of occupations filtered by the input string
+      parameters:
+        - name: filter
+          in: query
+          description: The string that filters the list of occupations
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/OccupationsResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+definitions:
+  ValidateInput:
+    type: object
+    properties:
+      name:
+        type: string
+        required: true
+      email:
+        type: string
+        required: true
+      occupation:
+        type: string
+        allowEmptyValue: true
+      birthday:
+        type: string
+        allowEmptyValue: true
+  ValidateResponse:
+    type: object
+    properties:
+      message:
+        type: string
+  OccupationsResponse:
+    type: object
+    properties:
+      occupations:
+        type: array
+        items:
+          type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
