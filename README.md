@@ -17,6 +17,9 @@ If the files have already been built and you did not make any modifications whil
 $ gulp
 ```
 
+# Build system
+Gulp is used as the main build system, the solution utilizes babel for ES6, browserify for module management, browsersync for live reloads.
+
 # Frontend
 React is used as the main frontend framework, Foundation is responsible for the general outlook and responsive behvior, and Rx is used for async event handling.
 
