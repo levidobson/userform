@@ -21,18 +21,18 @@ $ gulp
 Gulp is used as the main build system, the solution utilizes babel for ES6, browserify for module management, browsersync for live reloads.
 
 # Frontend
-React is used as the main frontend framework, Foundation is responsible for the general outlook and responsive behvior, and Rx is used for async event handling.
+React is used as the main frontend framework, Foundation is responsible for the general outlook and responsive behavior, and Rx is used for async event handling.
 
 # Backend
 Hapi is used as the main backend framework with Joi and Boom for validation. This solution uses [swagger](http://swagger.io/) to enable a design driven approach in development. The api is defined by 
 ```sh
 src/backend/config/swagger.yaml
 ```
-The api docs are automatically created for you and available at
+The api docs are automatically created and available at
 ```sh
 http://localhost:3000/api-docs
 ```
-You are also provided an automatic UI where you can easily test your api at
+An automatic UI is also provided for testing the api at
 ```sh
 http://localhost:3000/api-test
 ```
