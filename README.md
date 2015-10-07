@@ -40,3 +40,6 @@ The api-test functionality is enabled by the included swagger-route plugin that 
 
 # Static files and Nginx
 This kit includes a basic fileserver plugin that handles static files. In production it is advised to remove this plugin and use a reverse proxy like nginx for this.
+
+# Code style
+This project uses the [JavaScript Standard Style](http://standardjs.com/) as code style.
