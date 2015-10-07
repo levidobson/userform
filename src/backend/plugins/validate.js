@@ -1,4 +1,3 @@
-import Joi from 'hapi/node_modules/joi'
 import Boom from 'hapi/node_modules/boom'
 import formValidation from '../common/formvalidation.js'
 
@@ -18,7 +17,7 @@ var validate = {
         if (userData.birthday && !formValidation.checkBirthday(userData.birthday)) {
           return reply(Boom.badRequest('Age is less than 18'))
         }
-        
+
         reply({message: 'Validation successful'}).code(200)
       }
     })
